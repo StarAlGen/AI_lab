@@ -136,42 +136,43 @@ def run_n_queens():
     # Визуализируем графики
     visualize_plots(temp_history, best_eval_history, bad_solutions_history)
 
-# Инициализация графического интерфейса
-root = tk.Tk()
-root.title("Simulated Annealing for N-Queens")
+if __name__== '__main__':
+    # Инициализация графического интерфейса
+    root = tk.Tk()
+    root.title("Simulated Annealing for N-Queens")
 
-frame = ttk.Frame(root, padding="10")
-frame.grid(row=0, column=0, sticky=(tk.W, tk.E))
+    frame = ttk.Frame(root, padding="10")
+    frame.grid(row=0, column=0, sticky=(tk.W, tk.E))
 
-# Поля для ввода параметров
-ttk.Label(frame, text="Number of Queens:").grid(row=0, column=0)
-n_var = tk.StringVar(value="8")
-n_entry = ttk.Entry(frame, textvariable=n_var)
-n_entry.grid(row=0, column=1)
+    # Поля для ввода параметров
+    ttk.Label(frame, text="Number of Queens:").grid(row=0, column=0)
+    n_var = tk.StringVar(value="8")
+    n_entry = ttk.Entry(frame, textvariable=n_var)
+    n_entry.grid(row=0, column=1)
 
-ttk.Label(frame, text="Max Temperature:").grid(row=1, column=0)
-max_temp_var = tk.StringVar(value="1000")
-max_temp_entry = ttk.Entry(frame, textvariable=max_temp_var)
-max_temp_entry.grid(row=1, column=1)
+    ttk.Label(frame, text="Max Temperature:").grid(row=1, column=0)
+    max_temp_var = tk.StringVar(value="1000")
+    max_temp_entry = ttk.Entry(frame, textvariable=max_temp_var)
+    max_temp_entry.grid(row=1, column=1)
 
-ttk.Label(frame, text="Min Temperature:").grid(row=2, column=0)
-min_temp_var = tk.StringVar(value="0.01")
-min_temp_entry = ttk.Entry(frame, textvariable=min_temp_var)
-min_temp_entry.grid(row=2, column=1)
+    ttk.Label(frame, text="Min Temperature:").grid(row=2, column=0)
+    min_temp_var = tk.StringVar(value="0.01")
+    min_temp_entry = ttk.Entry(frame, textvariable=min_temp_var)
+    min_temp_entry.grid(row=2, column=1)
 
-ttk.Label(frame, text="Alpha (Temperature Decay):").grid(row=3, column=0)
-alpha_var = tk.StringVar(value="0.95")
-alpha_entry = ttk.Entry(frame, textvariable=alpha_var)
-alpha_entry.grid(row=3, column=1)
+    ttk.Label(frame, text="Alpha (Temperature Decay):").grid(row=3, column=0)
+    alpha_var = tk.StringVar(value="0.95")
+    alpha_entry = ttk.Entry(frame, textvariable=alpha_var)
+    alpha_entry.grid(row=3, column=1)
 
-ttk.Label(frame, text="Steps per Temp:").grid(row=4, column=0)
-steps_per_temp_var = tk.StringVar(value="100")
-steps_per_temp_entry = ttk.Entry(frame, textvariable=steps_per_temp_var)
-steps_per_temp_entry.grid(row=4, column=1)
+    ttk.Label(frame, text="Steps per Temp:").grid(row=4, column=0)
+    steps_per_temp_var = tk.StringVar(value="100")
+    steps_per_temp_entry = ttk.Entry(frame, textvariable=steps_per_temp_var)
+    steps_per_temp_entry.grid(row=4, column=1)
 
-# Кнопка для запуска алгоритма
-start_button = ttk.Button(frame, text="Start", command=run_n_queens)
-start_button.grid(row=5, column=0, columnspan=2)
+    # Кнопка для запуска алгоритма
+    start_button = ttk.Button(frame, text="Start", command=run_n_queens)
+    start_button.grid(row=5, column=0, columnspan=2)
 
-# Запуск GUI
-root.mainloop()
+    # Запуск GUI
+    root.mainloop()
